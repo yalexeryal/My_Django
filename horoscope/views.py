@@ -31,12 +31,10 @@ def index(request):
 
 def get_info_about_sing_zodiac(request, sing_zodiac: str):
     description = zodiac_dict.get(sing_zodiac)
-    zodiacs = list(zodiac_dict)
     data = {
         'description_zodiac': description,
         'sing': sing_zodiac,
-        'sing_name': description.split()[0],
-        'zodiacs': zodiacs
+        'zodiacs': zodiac_dict
     }
     return render(request, 'horoscope/info_zodiac.html', context=data)
 
